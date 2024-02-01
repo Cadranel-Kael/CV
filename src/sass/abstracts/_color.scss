@@ -1,0 +1,19 @@
+$color: (
+        "primary": #18565D,
+        "secondary": #F4B46C,
+        "light-purple": #e0e2ee,
+        "school": #E0E2ED,
+        "error": #F4B46C,
+        "canvas": #DFE2EE,
+        "white": #fff,
+);
+
+@each $key, $val in $color {
+  .text-#{$key} {
+    color: $val;
+  }
+  .bg-#{$key} {
+    background-color: $val;
+  }
+}
+

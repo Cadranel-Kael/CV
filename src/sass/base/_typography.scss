@@ -1,0 +1,22 @@
+@use "../abstracts/_size" as size;
+@use "../abstracts/_color" as color;
+@use "../abstracts/type" as type;
+@use "../abstracts/_mixins" as mixins;
+
+body {
+  color: map-get(color.$color, white);
+  font-family: map-get(type.$stack, "primary");
+}
+
+.title {
+  color: map-get(color.$color, secondary);
+  //mixins.size(3rem);
+  &--main {
+    //@include text-3xl;
+    margin-bottom: 1.5rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}

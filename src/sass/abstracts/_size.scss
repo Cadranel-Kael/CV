@@ -1,0 +1,41 @@
+$size: (
+        "xxs": (
+                "size": 0.6875rem, // 10px
+                "line-height": 1rem,
+        ),
+        "xs": (
+                "size": 0.75rem,
+                "line-height": 1rem,
+        ),
+        "sm": (
+                "size": 0.875rem,
+                "line-height": 1.0625rem,
+        ),
+        "base": (
+                "size": 0.875rem,
+                "line-height": 1.3125rem,
+        ),
+        "lg": (
+                "size": 1.125rem,
+                "line-height": 1.75rem,
+        ),
+        "xl": (
+                "size": 2rem,
+                "line-height": 2.9375rem,
+        ),
+        "2xl": (
+                "size": 2.034375rem,
+                "line-height": 2.375rem,
+        ),
+        "3xl": (
+                "size": 2.515625rem,
+                "line-height": 2.9375rem,
+        ),
+);
+
+@each $key, $val in $size {
+  .text-#{$key} {
+    font-size: map-get($val, "size");
+    line-height: map-get($val, "line-height");
+  }
+}

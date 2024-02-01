@@ -1,0 +1,6 @@
+@use "../abstracts/_color" as color;
+
+body {
+  max-width: 2000px;
+  background: map-get(color.$color, primary);
+}
