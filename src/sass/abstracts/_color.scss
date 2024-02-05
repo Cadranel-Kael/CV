@@ -3,9 +3,10 @@ $color: (
         "secondary": #F4B46C,
         "light-purple": #e0e2ee,
         "school": #E0E2ED,
-        "error": #F4B46C,
+        "error": #FFFFFF,
         "canvas": #DFE2EE,
-        "white": #fff,
+        "white": #FFFFFF,
+        "black": #000000,
 );
 
 @each $key, $val in $color {

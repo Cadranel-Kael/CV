@@ -30,31 +30,31 @@
       font-size: 0.6875rem;
       letter-spacing: 0.111em;
     }
-    &__field {
-      margin-bottom: 1.125rem;
-      display: flex;
-      flex-direction: column;
-      &__label {
-        margin-bottom: 0.5rem;
-      }
-      &__error {
-        color: $error-color;
-        text-transform: none;
-      }
-      &__input, &__textarea {
-        font-family: "Roboto", sans-serif;
-        font-size: 0.875rem;
-        padding: 1em 0 1em 0.7857142857em;
-        color: $secondary-color;
-        background: transparent;
-        border: #f9ae65 solid 1px;
-        margin-bottom: 0.5rem;
-        &::placeholder {
-          color: $secondary-color;
-          opacity: 0.8;
-        }
-      }
-    }
+    //&__field {
+    //  margin-bottom: 1.125rem;
+    //  display: flex;
+    //  flex-direction: column;
+    //  &__label {
+    //    margin-bottom: 0.5rem;
+    //  }
+    //  &__error {
+    //    color: $error-color;
+    //    text-transform: none;
+    //  }
+    //  &__input, &__textarea {
+    //    font-family: "Roboto", sans-serif;
+    //    font-size: 0.875rem;
+    //    padding: 1em 0 1em 0.7857142857em;
+    //    color: $secondary-color;
+    //    background: transparent;
+    //    border: #f9ae65 solid 1px;
+    //    margin-bottom: 0.5rem;
+    //    &::placeholder {
+    //      color: $secondary-color;
+    //      opacity: 0.8;
+    //    }
+    //  }
+    //}
     &__button {
       background: transparent;
       color: $secondary-color;

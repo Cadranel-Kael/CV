@@ -1,6 +1,7 @@
-@use "../abstracts/_color" as color;
+@use "../abstracts/_color" as c;
 
 body {
   max-width: 2000px;
-  background: map-get(color.$color, primary);
+  scroll-behavior: smooth;
+  background: map-get(c.$color, primary);
 }

@@ -1,0 +1,31 @@
+@use "../abstracts/_color" as c;
+@use "../utilities/_shake" as *;
+
+.field {
+  margin-bottom: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+    &__error {
+        color: map-get(c.$color, "error");
+        text-transform: none;
+    }
+  &__input, &__textarea {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    padding: 1em 0 1em 0.7857142857em;
+    color: map-get(c.$color, "secondary");
+    background: transparent;
+    border: #f9ae65 solid 1px;
+    margin-bottom: 0.5rem;
+    &.error {
+      text-transform: none;
+    }
+    &::placeholder {
+      color: map-get(c.$color, "secondary");
+      opacity: 0.8;
+    }
+  }
+}

@@ -1,15 +1,15 @@
 @use "../abstracts/_size" as size;
-@use "../abstracts/_color" as color;
+@use "../abstracts/_color" as c;
 @use "../abstracts/type" as type;
 @use "../abstracts/_mixins" as mixins;
 
 body {
-  color: map-get(color.$color, white);
-  font-family: map-get(type.$stack, "primary");
+  font-family: map-get(type.$stack, primary);
+  color: map-get(c.$color, "white");
 }
 
 .title {
-  color: map-get(color.$color, secondary);
+  color: map-get(c.$color, secondary);
   //mixins.size(3rem);
   &--main {
     //@include text-3xl;
