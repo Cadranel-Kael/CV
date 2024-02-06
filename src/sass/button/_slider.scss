@@ -1,5 +1,6 @@
 @import "../abstracts/variables";
 .button__slider {
+  position: relative;
   cursor: pointer;
   z-index: 1;
   &:before {
