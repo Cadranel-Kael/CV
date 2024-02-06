@@ -250,7 +250,8 @@ a {
   z-index: 1;
 }
 .background-list__item {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: start;
   justify-items: start;
   border-bottom: solid 1px;
@@ -264,7 +265,7 @@ a {
 }
 .background-list__item__link {
   display: block;
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   right: 0;
@@ -335,6 +336,26 @@ a {
     order: initial;
     grid-column: 1;
   }
+}
+
+.show-focused {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.show-focused:focus {
+  clip: auto;
+  clip-path: none;
+  height: auto;
+  overflow: visible;
+  position: absolute;
+  white-space: normal;
+  width: auto;
+  color: #FFFFFF;
 }
 
 .sr-only {
@@ -1320,6 +1341,7 @@ a {
 }
 
 .button__slider {
+  position: relative;
   cursor: pointer;
   z-index: 1;
 }
