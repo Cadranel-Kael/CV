@@ -242,6 +242,101 @@ a {
   opacity: 0.8;
 }
 
+.background-list {
+  color: #18565D;
+  display: block;
+  border: #3C6D79;
+  border-top: solid 1px;
+  z-index: 1;
+}
+.background-list__item {
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  border-bottom: solid 1px;
+  position: relative;
+  padding: 1.75rem 0 2.1875rem;
+}
+@media (min-width: 700px) {
+  .background-list__item {
+    grid-template-columns: 33.3% 1fr;
+  }
+}
+.background-list__item__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  text-indent: -1000%;
+}
+.background-list__item__link:after {
+  content: url("../../assets/arrow.svg");
+  display: block;
+  position: absolute;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  bottom: 2.5625rem;
+  right: 0;
+}
+.background-list__item__title {
+  font-size: 0.875rem;
+  color: #18565D;
+  letter-spacing: 0.012em;
+  margin-bottom: 0.546875rem;
+}
+@media (min-width: 700px) {
+  .background-list__item__title {
+    grid-column: 1;
+  }
+}
+.background-list__item__school {
+  font-size: 1.421875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.4375rem;
+}
+@media (min-width: 700px) {
+  .background-list__item__school {
+    grid-column: 2;
+  }
+}
+.background-list__item__extra {
+  font-size: 0.875rem;
+  letter-spacing: 0.024em;
+  margin-bottom: 2.6875rem;
+}
+@media (min-width: 700px) {
+  .background-list__item__extra {
+    grid-column: 2;
+  }
+}
+.background-list__item__location {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+}
+@media (min-width: 700px) {
+  .background-list__item__location {
+    grid-column: 2;
+  }
+}
+.background-list__item__logo {
+  display: block;
+  height: 5.4375rem;
+  width: auto;
+  vertical-align: top;
+  order: -1;
+  margin-bottom: 1.09375rem;
+}
+@media (min-width: 700px) {
+  .background-list__item__logo {
+    order: initial;
+    grid-column: 1;
+  }
+}
+
 .sr-only {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -1223,67 +1318,8 @@ a {
   background-color: #3c6d79;
   opacity: 0.05;
 }
-.education__list {
-  color: #18565D;
-  display: block;
-  border: #3C6D79;
-  border-top: solid 1px;
-  z-index: 1;
-}
-.education__list .list__item {
-  border-bottom: solid 1px;
-  position: relative;
-  padding: 1.75rem 0 2.1875rem;
-}
-.education__list .list__item .item__link {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  text-indent: -1000%;
-}
-.education__list .list__item .item__link:after {
-  content: url("../../images/arrow.svg");
-  display: block;
-  position: absolute;
-  background-size: cover;
-  width: 100%;
-  height: auto;
-  bottom: 2.5625rem;
-  right: 0;
-}
-.education__list .list__item .item__title {
-  font-size: 0.875rem;
-  color: #18565D;
-  letter-spacing: 0.012em;
-  margin-bottom: 1.125rem;
-}
-.education__list .list__item .item__school {
-  font-size: 1.421875rem;
-  letter-spacing: 0.02em;
-  margin-bottom: 1.4375rem;
-}
-.education__list .list__item .item__extra {
-  font-size: 0.875rem;
-  letter-spacing: 0.024em;
-  margin-bottom: 2.6875rem;
-}
-.education__list .list__item .item__location {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.875rem;
-}
-.education__list .list__item .item__logo {
-  display: block;
-  height: 5.4375rem;
-  width: auto;
-  vertical-align: top;
-}
 
 .button__slider {
-  position: relative;
   cursor: pointer;
   z-index: 1;
 }
