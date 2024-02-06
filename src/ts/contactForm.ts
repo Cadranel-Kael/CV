@@ -39,5 +39,4 @@ export function contactForm() {
     );
 
     form.build();
-
 }
