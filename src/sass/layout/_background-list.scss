@@ -1,0 +1,93 @@
+@use "../abstracts/color" as c;
+@use "../abstracts/screen" as s;
+
+.background-list {
+  color: map-get(c.$color, "primary");
+  display: block;
+  border: #3C6D79;
+  border-top: solid 1px;
+  z-index: 1;
+
+  &__item {
+    display: grid;
+    align-items: start;
+    justify-items: start;
+    border-bottom: solid 1px;
+    position: relative;
+    padding: 1.75rem 0 2.1875rem;
+    @media (min-width: map-get(s.$screen, md)) {
+      grid-template-columns: 33.3% 1fr;
+    }
+
+    &__link {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      text-indent: -1000%;
+
+      &:after {
+        content: url("../../assets/arrow.svg");
+        display: block;
+        position: absolute;
+        background-size: cover;
+        width: 100%;
+        height: auto;
+        bottom: 2.5625rem;
+        right: 0;
+      }
+    }
+
+    &__title {
+      font-size: 0.875rem;
+      color: map-get(c.$color, "primary");
+      letter-spacing: 0.012em;
+      margin-bottom: 0.546875rem;
+      @media (min-width: map-get(s.$screen, md)) {
+        grid-column: 1;
+      }
+    }
+
+    &__school {
+      font-size: 1.421875rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.4375rem;
+      @media (min-width: map-get(s.$screen, md)) {
+        grid-column: 2;
+      }
+    }
+
+    &__extra {
+      font-size: 0.875rem;
+      letter-spacing: 0.024em;
+      margin-bottom: 2.6875rem;
+      @media (min-width: map-get(s.$screen, md)) {
+        grid-column: 2;
+      }
+    }
+
+    &__location {
+      font-family: "Roboto", sans-serif;
+      font-size: 0.875rem;
+      @media (min-width: map-get(s.$screen, md)) {
+        grid-column: 2;
+      }
+    }
+
+    &__logo {
+      display: block;
+      height: 5.4375rem;
+      width: auto;
+      vertical-align: top;
+      order: -1;
+      margin-bottom: 1.09375rem;
+      @media (min-width: map-get(s.$screen, md)) {
+        order: initial;
+        grid-column: 1;
+      }
+    }
+  }
+}
