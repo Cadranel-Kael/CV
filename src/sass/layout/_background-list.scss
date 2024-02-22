@@ -1,5 +1,5 @@
 @use "../abstracts/color" as c;
-@use "../abstracts/screen" as s;
+@use "../abstracts/screens" as s;
 
 .background-list {
   color: map-get(c.$color, "primary");
@@ -16,7 +16,7 @@
     border-bottom: solid 1px;
     position: relative;
     padding: 1.75rem 0 2.1875rem;
-    @media (min-width: map-get(s.$screen, md)) {
+    @media (min-width: map-get(s.$screens, md)) {
       grid-template-columns: 33.3% 1fr;
     }
 
@@ -47,7 +47,7 @@
       color: map-get(c.$color, "primary");
       letter-spacing: 0.012em;
       margin-bottom: 0.546875rem;
-      @media (min-width: map-get(s.$screen, md)) {
+      @media (min-width: map-get(s.$screens, md)) {
         grid-column: 1;
       }
     }
@@ -56,7 +56,7 @@
       font-size: 1.421875rem;
       letter-spacing: 0.02em;
       margin-bottom: 1.4375rem;
-      @media (min-width: map-get(s.$screen, md)) {
+      @media (min-width: map-get(s.$screens, md)) {
         grid-column: 2;
       }
     }
@@ -65,7 +65,7 @@
       font-size: 0.875rem;
       letter-spacing: 0.024em;
       margin-bottom: 2.6875rem;
-      @media (min-width: map-get(s.$screen, md)) {
+      @media (min-width: map-get(s.$screens, md)) {
         grid-column: 2;
       }
     }
@@ -73,7 +73,7 @@
     &__location {
       font-family: "Roboto", sans-serif;
       font-size: 0.875rem;
-      @media (min-width: map-get(s.$screen, md)) {
+      @media (min-width: map-get(s.$screens, md)) {
         grid-column: 2;
       }
     }
@@ -85,7 +85,7 @@
       vertical-align: top;
       order: -1;
       margin-bottom: 1.09375rem;
-      @media (min-width: map-get(s.$screen, md)) {
+      @media (min-width: map-get(s.$screens, md)) {
         order: initial;
         grid-column: 1;
       }

@@ -1,0 +1,79 @@
+@use "../abstracts/_color" as c;
+@use "../abstracts/_screens" as s;
+@use "../abstracts/_mixins" as *;
+
+.intro {
+  display: grid;
+  grid-template-areas:
+    "nav nav nav nav"
+    "title title title title"
+    "img img img img"
+    "text text text text"
+    "animation animation animation animation";
+  margin-bottom: 4.375rem;
+  position: relative;
+  @media (min-width: map-get(s.$screens, big)) {
+    grid-template-areas:
+    "nav nav animation animation"
+    "title title animation animation"
+    "img text animation animation";
+  }
+
+  &__nav {
+    padding: 1.75rem 0.9722311111rem;
+    grid-area: nav;
+    @media (min-width: map-get(s.$screens, big)) {
+        padding: 3.3125rem 0.9722311111rem;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    margin: 3.25rem 0.9722311111rem 2.625rem;
+    @include fluid-type(40.5, 103.5, 78, 121);
+    line-height: 1.1604938272;
+    font-weight: 500;
+    width: 40%;
+    @media (min-width: map-get(s.$screens, md)) {
+      margin-top: 3.875rem;
+      margin-bottom: 4.625rem;
+    }
+    @media (min-width: map-get(s.$screens, big)) {
+      margin: 3.25rem 2.1875rem 2.625rem;
+    }
+  }
+
+  &__portait {
+    grid-area: img;
+    position: relative;
+    height: auto;
+    width: 70%;
+    background-color: map-get(c.$color, "secondary");
+    @media (min-width: 700px) {
+      width: 50vw;
+    }
+    @media (min-width: 1000px) {
+      width: 25vw;
+    }
+  }
+
+  &__text-carousel {
+    grid-area: text;
+  }
+
+  &__animation-carousel {
+    grid-area: animation;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 7.5rem;
+    @media (min-width: 1000px) {
+      width: 50vw;
+    }
+    //@media (min-width: $tablet-size) {
+    //  position: absolute;
+    //  top: 0;
+    //  right: 0;
+    //  width: 50vw;
+    //}
+  }
+}
