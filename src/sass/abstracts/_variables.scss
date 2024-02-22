@@ -34,8 +34,3 @@ $roll-translate: 200px;
 
 // Delaying animation
 
-@mixin set-delay($number-of-items, $delay) {
-  @for $i from 1 through $number-of-items {
-    &.item-#{$i} {transition-delay: #{$i*$delay}s;}
-  }
-}
