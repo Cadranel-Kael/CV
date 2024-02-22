@@ -1,0 +1,12 @@
+@function convertToRem($px) {
+  $remSize: $px / 16;
+  @return $remSize * 1rem;
+}
+
+@function covertToUnitless($line-height-px, $font-size-px) {
+  @return $line-height-px / $font-size-px;
+}
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
