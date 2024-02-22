@@ -12,7 +12,6 @@ body {
   color: map-get(c.$color, secondary);
   //mixins.size(3rem);
   &--main {
-    //@include text-3xl;
     margin-bottom: 1.5rem;
   }
 }
