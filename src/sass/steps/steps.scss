@@ -1,4 +1,5 @@
 @import "../abstracts/variables";
+@import "../abstracts/_mixins";
 
 .steps {
   display: grid;
@@ -9,17 +10,14 @@
     grid-template-columns: 19% 10% 1fr;
   }
   &__title {
-    font-size: 2.034375rem;
+    @include fluid-type(32.55, 58.8, 38, 69);
     color: $secondary-color;
     width: 4.3384615385em;
     line-height: 1.0689170183;
     margin-bottom: 7.125rem;
-    @media (min-width: $tablet-size) {
-      font-size: 2.51875rem;
-    }
   }
   &__side-text {
-    font-size: 0.875rem;
+    @include fluid-type(14, 18, 17, 23);
     margin-top: 2.5rem;
     justify-self: end;
     align-self: start;
@@ -52,17 +50,18 @@
       }
     .item {
       &__title {
-        font-size: 0.875rem;
+        @include fluid-type(14, 20.25, 26.25, 45);
         margin-bottom: 0.4375rem;
       }
       &__content {
       .content {
         &__tagline {
-          font-size: 1.421875rem;
+          @include fluid-type(26.25, 45, 26.25, 45);
           text-transform: uppercase;
           margin-bottom: 1.5625rem;
         }
         &__text {
+          @include fluid-type(14, 18, 21, 27);
           font-size: 0.875rem;
           line-height: 1.3125;
         }
