@@ -1,0 +1,44 @@
+@use "../abstracts/color" as c;
+
+.logo-button {
+  width: 15vw;
+  height: 15vw;
+  border: 1px solid map-get(c.$color, secondary);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.3s cubic-bezier(.4,0,0,1);
+
+  svg {
+    width: 50%;
+    height: 50%;
+    fill: none;
+    transition: 0.3s cubic-bezier(.4,0,0,1);
+    stroke: map-get(c.$color, secondary);
+    stroke-width: 8;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 110%;
+    width: 110%;
+    z-index: -1;
+    border-radius: 999px;
+    transition: 0.3s cubic-bezier(.4,0,0,1);
+    transform: scale(0);
+    background: map-get(c.$color, secondary);
+  }
+
+  &:hover {
+    border: map-get(c.$color, primary) 1px solid;
+    svg {
+      stroke: map-get(c.$color, primary);
+    }
+    &:before {
+      transform: scaleY(1);
+    }
+  }
+}
