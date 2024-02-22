@@ -3,8 +3,15 @@
 @forward "base/_typography";
 
 @forward "components/_field";
+@forward "components/_logo-button";
+@forward "components/_footer";
+@forward "components/_burger-menu";
+@forward "components/_text-carousel";
+@forward "components/_animation-carousel";
+@forward "components/_nav";
 
 @forward "layout/_background-list";
+@forward "layout/_intro";
 
 @forward "utilities/_show-focused";
 
@@ -48,12 +55,11 @@ a {
 .sideways {
   writing-mode: vertical-rl;
   rotate: 180deg;
+  margin-bottom: auto;
 }
 
 @import "marquee-text/marquee-text";
-@import "intro/intro";
 @import "steps/steps";
 @import "language/language";
 @import "education/education";
 @import "button/slider";
-@import "footer/footer";
