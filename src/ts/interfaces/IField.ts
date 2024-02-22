@@ -1,6 +1,6 @@
 interface IField {
     field: HTMLInputElement | HTMLTextAreaElement;
     fieldName?: string;
-    rules: IRules;
+    rules?: IRules;
     errorArea: HTMLElement;
 }
