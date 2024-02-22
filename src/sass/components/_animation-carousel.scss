@@ -1,45 +1,68 @@
-@import "../../abstracts/variables";
+@use "../abstracts/_color" as c;
+@use "../abstracts/_variables" as *;
+
+:root {
+  --carousel-width: 0;
+}
+
 .intro__animation-carousel {
   background: #eff1f6;
   overflow: hidden;
-  //width: 50vw;
-  //position: absolute;
-  //top: 0;
-  //right: 0;
-  //z-index: -1;
+  position: relative;
+
+  :before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--carousel-width);
+    height: 100%;
+    background: map-get(c.$color, primary);
+    z-index: 1;
+    @media (max-width: 1000px) {
+      background: transparent;
+    }
+  }
+
   .animation-carousel {
     &__item-1 {
       > svg {
         width: 100vw;
-        @media (min-width: $desktop-size) {
+        @media (min-width: 1000px) {
           width: 50vw;
         }
         height: auto;
         translate: -20%;
       }
-    .item-1 {
-      &__boat {
-        translate: -5%;
-        fill: white;
-        transform-origin: bottom;
-        animation: 3s ease-in-out infinite animation-1--rock;
-        &__ball {
-          transform-box: fill-box;
-          transform-origin: center center;
-          &--1 {
-            animation: 3s cubic-bezier(0.71, 0.01, 0.42, 0.99)  infinite animation-1--roll;
-          }
-          &--2 {
-            animation: 3s cubic-bezier(0.59, 0, 0.32, 1) infinite animation-1--roll;
+
+      .item-1 {
+        &__boat {
+          translate: -5%;
+          fill: white;
+          transform-origin: bottom;
+          animation: 3s ease-in-out infinite animation-1--rock;
+
+          &__ball {
+            transform-box: fill-box;
+            transform-origin: center center;
+
+            &--1 {
+              animation: 3s cubic-bezier(0.71, 0.01, 0.42, 0.99) infinite animation-1--roll;
+            }
+
+            &--2 {
+              animation: 3s cubic-bezier(0.59, 0, 0.32, 1) infinite animation-1--roll;
+            }
           }
         }
-      }
-      &__wave {
-        fill: #eff1f6;
-        animation: 3s linear infinite animation-1--wave;
+
+        &__wave {
+          fill: #eff1f6;
+          animation: 3s linear infinite animation-1--wave;
+        }
       }
     }
-    }
+
     &__item-2 {
       > svg {
         display: block;
@@ -52,16 +75,20 @@
         &__ball {
           transform-box: fill-box;
           transform-origin: center center;
+
           &--1 {
             animation: 3s ease-in-out infinite animation-2--roll;
           }
+
           &--2 {
             animation: 3s ease-in-out infinite animation-2--roll;
           }
+
           &--3 {
             animation: 3s ease-in-out infinite animation-2--roll;
           }
         }
+
         &__tri {
           fill: white;
           transform-origin: bottom;
