@@ -4,7 +4,17 @@ export class Field {
     constructor(IField) {
         this._validated = false;
         this._field = IField.field;
-        this._rules = IField.rules;
+        if (IField.rules) {
+            this._rules = IField.rules;
+        }
+        else {
+            this._field.required ? this._rules.required = this._field.required : this._rules.required = false;
+            this._rules = {
+                required: this._field.required,
+                minLength: this._field.minLength,
+                maxLength: this._field.maxLength,
+            };
+        }
         if (IField.fieldName === undefined) {
             IField.fieldName = IField.field.name;
         }
