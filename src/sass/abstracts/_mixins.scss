@@ -1,5 +1,83 @@
+@use "./_function" as *;
+@use "./_screens" as *;
+
 @mixin text($size, $line-height: 1) {
-    font-size: $size;
-    line-height: $line-height;
+  font-size: $size;
+  line-height: $line-height;
 }
 
+@mixin fluid-value($values) {
+}
+
+@mixin fluid-type($min-font-size: 12, $max-font-size: 24, $min-line-height: 21, $max-line-height: 21, $lower-range: map-get($screens, sm), $upper-range: map-get($screens, lg)) {
+  $min-font-size: convertToRem($min-font-size);
+  $max-font-size: convertToRem($max-font-size);
+  $min-line-height: convertToRem($min-line-height);
+  $max-line-height: convertToRem($max-line-height);
+
+  font-size: $min-font-size;
+  line-height: stripUnit($min-line-height / $min-font-size);
+
+  @media (min-width: $lower-range) {
+    $font-size: calc($min-font-size + stripUnit($max-font-size - $min-font-size) * ((100vw - $lower-range) / stripUnit($upper-range - $lower-range)));
+    $line-height: calc($min-line-height + stripUnit($max-line-height - $min-line-height) * ((100vw - $lower-range) / stripUnit($upper-range - $lower-range)));
+  }
+  @media (min-width: $upper-range) {
+    font-size: $max-font-size;
+    line-height: stripUnit($max-line-height / $max-font-size);
+  }
+}
+
+@mixin set-delay($number-of-items, $delay) {
+  @for $i from 1 through $number-of-items {
+    &.item-#{$i} {
+      transition-delay: #{$i*$delay}s;
+    }
+  }
+}
+
+@mixin fluid-padding($min-top, $min-right: $min-top, $min-bottom: $min-top, $min-left: $min-right, $max-top, $max-right: $max-top, $max-bottom: $max-all, $max-left: $max-all, $lower-range: map-get($screens, sm), $upper-range: map-get($screens, lg)) {
+  $min-all: convertToRem($min-all);
+  $min-top: convertToRem($min-top);
+  $min-right: convertToRem($min-right);
+  $min-bottom: convertToRem($min-bottom);
+  $min-left: convertToRem($min-left);
+  $max-all: convertToRem($max-all);
+  $max-top: convertToRem($max-top);
+  $max-right: convertToRem($max-right);
+  $max-bottom: convertToRem($max-bottom);
+  $max-left: convertToRem($max-left);
+
+  padding: $min-all;
+
+  @media (min-width: $lower-range) {
+    padding: $min-top $min-right $min-bottom $min-left;
+  }
+
+  @media (min-width: $upper-range) {
+    padding: $max-top $max-right $max-bottom $max-left;
+  }
+}
+
+@mixin fluid-margin($min-all, $min-top: $min-all, $min-right: $min-all, $min-bottom: $min-all, $min-left: $min-all, $max-all, $max-top: $max-all, $max-right: $max-all, $max-bottom: $max-all, $max-left: $max-all, $lower-range: map-get($screens, sm), $upper-range: map-get($screens, lg)) {
+  $min-all: convertToRem($min-all);
+  $min-top: convertToRem($min-top);
+  $min-right: convertToRem($min-right);
+  $min-bottom: convertToRem($min-bottom);
+  $min-left: convertToRem($min-left);
+  $max-all: convertToRem($max-all);
+  $max-top: convertToRem($max-top);
+  $max-right: convertToRem($max-right);
+  $max-bottom: convertToRem($max-bottom);
+  $max-left: convertToRem($max-left);
+
+  margin: $min-all;
+
+  @media (min-width: $lower-range) {
+    margin: $min-top $min-right $min-bottom $min-left;
+  }
+
+  @media (min-width: $upper-range) {
+    margin: $max-top $max-right $max-bottom $max-left;
+  }
+}
